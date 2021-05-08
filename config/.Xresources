@@ -1,0 +1,3 @@
+! Truetype font
+xterm*faceName: Monospace
+xterm*faceSize: 13

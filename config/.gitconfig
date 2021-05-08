@@ -1,0 +1,9 @@
+[init]
+	defaultBranch = master
+[user]
+	name = Mohammad Aadil Shabier
+	email = aadilshabier1@gmail.com
+[core]
+	editor = nvim
+[credential]
+	helper = store

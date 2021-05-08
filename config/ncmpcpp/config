@@ -1,0 +1,23 @@
+mpd_host = localhost
+mpd_port = 6601
+mpd_music_dir = "~/Disks/Play/Music/"
+
+mpd_connection_timeout = 5
+
+audio_output {
+        type            "fifo"
+        name            "Visualizer feed"
+        path            "/tmp/mpd.fifo"
+        format          "44100:16:2"
+}
+visualizer_in_stereo = yes
+#visualizer_sync_interval = 0
+visualizer_type = spectrum
+#visualizer_fps = 60
+#visualizer_autoscale = no
+visualizer_look = ●▮
+#
+#visualizer_color = blue, cyan, green, yellow, magenta, red
+## Alternative subset of 256 colors for terminals that support it.
+#
+#visualizer_color = 47, 83, 119, 155, 191, 227, 221, 215, 209, 203, 197, 161

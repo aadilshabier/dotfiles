@@ -1,0 +1,3 @@
+# !/usr/bin/sh
+
+apropos . | dmenu | cut -d' ' -f1 | xargs man -Tpdf | /usr/bin/zathura -

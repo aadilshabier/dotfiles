@@ -1,0 +1,109 @@
+# Important
+base-devel
+git
+man-db
+man-pages
+sudo
+
+# Editor
+nano
+neovim
+
+# Boot
+efibootmgr
+dos-fs-tools
+grub
+os-prober
+ntfs-3g
+mtools
+
+# Network
+networkmanager
+network-manage-applet
+
+# Power
+xfce4-power-manager
+
+# Sound/Volume
+pulseaudio
+pavucontrol
+
+# Terminal
+xterm
+alacritty
+zsh
+tmux
+
+# Application runner
+rofi // symlink rofi as dmenu
+
+# File Manager
+ranger
+thunar
+thunar-volman
+
+# Browser
+chromium
+
+# Display/Appearance
+xorg
+xorg-server
+acpilight
+lightdm
+lightdm-gtk-greeter
+lightdm-gtk-greeter-settings
+lxappearance
+qt5ct
+nitrogen
+
+# Window Manager
+i3gaps
+polybar
+i3lock
+
+#Compositor
+picom-ibhagwan-git
+
+# Music Player
+mpd
+ncmpcpp
+
+# Image/Video
+feh
+inkscape
+krita
+vlc
+blender
+
+# Reader
+zathura
+zathura-pdf-mupdf
+zathura-ps
+zathura-djvu
+okular
+
+# Theming
+python-pywal (https://github.com/dylanaraps/pywal.git)
+genzathurarc(https://github.com/GideonWolfe/Zathura-Pywal.git)
+
+# Misc
+yay
+clipit
+redshift
+flameshot
+notejot
+ripgrep
+gcolor3
+engrampa
+neofetch
+gucharmap
+bitwarden
+
+# Themes/Fonts 
+arc-icon-theme
+arc-gtk-theme
+papirus-icon-theme
+noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
+noto-fonts-extra
