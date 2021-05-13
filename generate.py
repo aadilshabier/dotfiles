@@ -13,7 +13,7 @@ source_files = [
     ".zshrc",
     ".gitconfig",
     ".tmux.conf",
-    ".Xprofile",
+    ".profile",
     ".Xresources",
     ".zshenv",
     ".zshrc",
