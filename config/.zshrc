@@ -44,11 +44,11 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
 
-alias zshconfig="nvim ~/.zshrc"
-alias ohmyzsh="nvim ~/.oh-my-zsh"
-alias i3config="nvim ~/.config/i3/config"
-alias polybarconfig="nvim ~/.config/polybar/config"
-alias picomconf="nvim ~/.config/picom/picom.conf"
+alias zshconfig="$EDITOR ~/.zshrc"
+alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
+alias i3config="$EDITOR ~/.config/i3/config"
+alias polybarconfig="$EDITOR  ~/.config/polybar/config"
+alias picomconf="$EDITOR ~/.config/picom/picom.conf"
 alias code=vscodium
 
 alias codedir="~/Work/Programming"

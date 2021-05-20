@@ -23,11 +23,8 @@ exec --no-startup-id mpd
 
 set $mod Mod4
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango:DejaVu Sans Mono 10
 
-# Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
@@ -49,11 +46,18 @@ bindsym $mod+d exec --no-startup-id rofi -show drun -modi drun -show-icons -term
 # Rofi run mode
 bindsym $mod+Shift+d exec --no-startup-id rofi -show run -modi run -terminal alacritty
 
+# Window switcher
+bindsym $mod+Tab exec --no-startup-id rofi -show window
+
 # Zathura man pages
 bindsym $mod+m exec --no-startup-id sh ~/scripts/manpdf
 
 # Black Lock screen
 bindsym $mod+F9 exec --no-startup-id i3lock -c 000000
+
+# Brave and thunar
+bindsym $mod+F2 exec --no-startup-id brave
+bindsym $mod+F3 exec --no-startup-id thunar
 
 # change focus
 bindsym $mod+j focus left
@@ -189,3 +193,5 @@ for_window [class="Dconf-editor"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Volctl"] floating enable
 for_window [class="Gucharmap"] floating enable
+for_window [class="Lxappearance"] floating enable
+for_window [class="Gcolor3"] floating enable

@@ -14,8 +14,11 @@ set shiftwidth=4
 set number
 set relativenumber
 
+set nowrap
+set sidescroll=10
+
 " 
-nnoremap <esc> :noh<return><esc>
+nnoremap <esc> :noh<CR><C-l>
 
 " Give more space for displaying messages.
 set cmdheight=2

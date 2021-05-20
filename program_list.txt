@@ -57,7 +57,7 @@ qt5ct
 nitrogen
 
 # Window Manager
-i3gaps
+i3-gaps
 polybar
 i3lock
 

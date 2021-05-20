@@ -1,3 +1,0 @@
-export PATH="/home/aadil/.local/bin:$PATH"
-export EDITOR=nvim
-
