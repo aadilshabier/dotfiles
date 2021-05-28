@@ -41,6 +41,9 @@ rofi // symlink rofi as dmenu
 ranger
 thunar
 thunar-volman
+tumbler
+ffmpegthumbnailer
+ffmpegthumbnailer-mp3
 
 # Browser
 chromium

@@ -16,7 +16,7 @@ radius = 6.0
 fixed-center = false
 
 ;background = ${colors.background}
-background = #50000000
+background = #80000000
 foreground = ${colors.foreground}
 
 line-size = 3
@@ -41,14 +41,14 @@ modules-right = xbacklight xkeyboard filesystem memory cpu temperature date batt
 
 tray-position = right
 tray-padding = 2
-tray-background = #50000000
+tray-background = #80000000
 
 
 ;override-redirect = true
 wm-restack = i3
 
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
+scroll-up = i3wm-wsprev
+scroll-down = i3wm-wsnext
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -126,7 +126,7 @@ type = internal/mpd
 format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next> <label-time>
 format-offline = <label-offline>
 
-port = "6600"
+port = "6601"
 
 ;label-song = %artist% - %title%
 label-offline = 🎜 mpd is offline

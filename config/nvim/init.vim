@@ -18,7 +18,7 @@ set nowrap
 set sidescroll=10
 
 " 
-nnoremap <esc> :noh<CR><C-l>
+nnoremap <silent> <esc> :noh<CR>
 
 " Give more space for displaying messages.
 set cmdheight=2
@@ -189,6 +189,7 @@ call dein#add('/home/aadil/.cache/dein/repos/github.com/Shougo/dein.vim')
 call dein#add('neoclide/coc.nvim', { 'merged':0 })
 call dein#add('preservim/nerdtree')
 call dein#add('rust-lang/rust.vim')
+let g:rustfmt_autosave = 1
 call dein#add('dylanaraps/wal.vim')
 
 colorscheme wal

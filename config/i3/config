@@ -1,25 +1,24 @@
-# i3 config file (v4)
-# Please see https://i3wm.org/docs/userguide.html for a complete reference!
-
 # Gaps
 for_window [class=".*"] border pixel 2
-smart_borders on
 gaps inner 7
 gaps outer 7
+smart_borders on
 
 # Start picom compositor
 exec --no-startup-id picom
 
 # Startup
 exec_always --no-startup-id wal -R
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id volctl
 exec --no-startup-id clipit
 exec --no-startup-id nm-applet
-exec --no-startup-id redshift -l 13:75
+exec --no-startup-id redshift
 exec --no-startup-id flameshot
+exec --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id mpd
 
+# xfce4 power manager
+exec --no-startup-id xfce4-power-manager
 
 set $mod Mod4
 
@@ -47,17 +46,13 @@ bindsym $mod+d exec --no-startup-id rofi -show drun -modi drun -show-icons -term
 bindsym $mod+Shift+d exec --no-startup-id rofi -show run -modi run -terminal alacritty
 
 # Window switcher
-bindsym $mod+Tab exec --no-startup-id rofi -show window
+bindsym $mod+Tab exec --no-startup-id rofi -show window -show-icons
 
 # Zathura man pages
 bindsym $mod+m exec --no-startup-id sh ~/scripts/manpdf
 
 # Black Lock screen
 bindsym $mod+F9 exec --no-startup-id i3lock -c 000000
-
-# Brave and thunar
-bindsym $mod+F2 exec --no-startup-id brave
-bindsym $mod+F3 exec --no-startup-id thunar
 
 # change focus
 bindsym $mod+j focus left
@@ -180,9 +175,6 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
-# xfce4 power manager
-exec --no-startup-id xfce4-power-manager
 
 # open as floating
 for_window [class="Xfce4-power-manager-settings"] floating enable
