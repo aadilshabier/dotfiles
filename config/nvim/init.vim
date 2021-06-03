@@ -17,7 +17,7 @@ set relativenumber
 set nowrap
 set sidescroll=10
 
-" 
+" Remove highlight while <esc> is pressed
 nnoremap <silent> <esc> :noh<CR>
 
 " Give more space for displaying messages.
@@ -193,7 +193,6 @@ let g:rustfmt_autosave = 1
 call dein#add('dylanaraps/wal.vim')
 
 colorscheme wal
-
 
 " Required:
 call dein#end()

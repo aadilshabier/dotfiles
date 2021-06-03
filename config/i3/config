@@ -4,21 +4,17 @@ gaps inner 7
 gaps outer 7
 smart_borders on
 
-# Start picom compositor
-exec --no-startup-id picom
-
 # Startup
 exec_always --no-startup-id wal -R
+exec --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id volctl
 exec --no-startup-id clipit
 exec --no-startup-id nm-applet
 exec --no-startup-id redshift
 exec --no-startup-id flameshot
-exec --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id mpd
-
-# xfce4 power manager
 exec --no-startup-id xfce4-power-manager
+exec --no-startup-id picom
 
 set $mod Mod4
 

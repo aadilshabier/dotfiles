@@ -49,6 +49,7 @@ alias ohmyzsh="$EDITOR ~/.oh-my-zsh"
 alias i3config="$EDITOR ~/.config/i3/config"
 alias polybarconfig="$EDITOR  ~/.config/polybar/config"
 alias picomconf="$EDITOR ~/.config/picom/picom.conf"
+alias dotfiles="~/Work/Programming/dotfiles"
 alias code=vscodium
 
 alias codedir="~/Work/Programming"
