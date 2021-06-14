@@ -17,6 +17,9 @@ set relativenumber
 set nowrap
 set sidescroll=10
 
+" Mouse supprt for normal mode
+set mouse=n
+
 " Remove highlight while <esc> is pressed
 nnoremap <silent> <esc> :noh<CR>
 

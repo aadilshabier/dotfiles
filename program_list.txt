@@ -27,6 +27,7 @@ xfce4-power-manager
 # Sound/Volume
 pulseaudio
 pavucontrol
+volctl
 
 # Terminal
 xterm
@@ -43,7 +44,7 @@ thunar
 thunar-volman
 tumbler
 ffmpegthumbnailer
-ffmpegthumbnailer-mp3
+thunar-archive-plugin
 
 # Browser
 chromium

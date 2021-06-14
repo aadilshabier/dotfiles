@@ -55,4 +55,6 @@ alias code=vscodium
 alias codedir="~/Work/Programming"
 alias repodir="~/Work/Repos"
 
+alias lock="i3lock -c 000000 && systemctl suspend"
+
 export TERM=xterm-256color
