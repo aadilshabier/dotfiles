@@ -1,6 +1,6 @@
 mpd_host = localhost
 mpd_port = 6601
-mpd_music_dir = "~/Disks/Play/Music/"
+mpd_music_dir = "~/Disks/Entertainment/Music/"
 
 mpd_connection_timeout = 5
 

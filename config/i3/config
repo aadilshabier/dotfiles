@@ -5,16 +5,16 @@ gaps outer 7
 smart_borders on
 
 # Startup
-exec_always --no-startup-id wal -R
 exec --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id picom
 exec --no-startup-id volctl
-exec --no-startup-id clipit
+exec --no-startup-id copyq
 exec --no-startup-id nm-applet
 exec --no-startup-id redshift-gtk
 exec --no-startup-id flameshot
 exec --no-startup-id mpd
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id picom
 
 set $mod Mod4
 
@@ -183,3 +183,6 @@ for_window [class="Volctl"] floating enable
 for_window [class="Gucharmap"] floating enable
 for_window [class="Lxappearance"] floating enable
 for_window [class="Gcolor3"] floating enable
+for_window [class="copyq"] floating enable
+for_window [class="Nitrogen"] floating enable
+for_window [class="Galculator"] floating enable

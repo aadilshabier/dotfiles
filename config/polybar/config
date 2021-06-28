@@ -1,7 +1,9 @@
 [colors]
-background = ${xrdb:color0:#222}
+;background = ${xrdb:color0:#222}
+background = #000000
 background-alt = ${xrdb:color0:#222}
-foreground = ${xrdb:color7:#222}
+;foreground = ${xrdb:color7:#222}
+foreground = #ffffff
 foreground-alt = ${xrdb:color7:#222}
 primary = ${xrdb:color1:#222}
 secondary = ${xrdb:color2:#222}
@@ -132,7 +134,8 @@ format-offline = <label-offline>
 port = "6601"
 
 ;label-song = %artist% - %title%
-label-offline = 🎜 mpd is offline
+;label-offline = 🎜 mpd is offline
+label-offline =  mpd is offline
 
 icon-prev = 
 icon-stop = 

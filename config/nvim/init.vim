@@ -193,9 +193,6 @@ call dein#add('neoclide/coc.nvim', { 'merged':0 })
 call dein#add('preservim/nerdtree')
 call dein#add('rust-lang/rust.vim')
 let g:rustfmt_autosave = 1
-call dein#add('dylanaraps/wal.vim')
-
-colorscheme wal
 
 " Required:
 call dein#end()
