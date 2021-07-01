@@ -102,6 +102,8 @@ engrampa
 neofetch
 gucharmap
 bitwarden
+bitwarden-cli
+bitwarden-rofi
 
 # Themes/Fonts 
 arc-icon-theme

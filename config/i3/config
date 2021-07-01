@@ -41,6 +41,9 @@ bindsym $mod+d exec --no-startup-id rofi -show drun -modi drun -show-icons -term
 # Rofi run mode
 bindsym $mod+Shift+d exec --no-startup-id rofi -show run -modi run -terminal alacritty
 
+# Bitwarden Rofi
+bindsym $mod+b exec --no-startup-id bwmenu --auto-lock 120
+
 # Window switcher
 bindsym $mod+Tab exec --no-startup-id rofi -show window -show-icons
 
