@@ -23,6 +23,9 @@ set mouse=n
 " Remove highlight while <esc> is pressed
 nnoremap <silent> <esc> :noh<CR>
 
+" Open NERDTree
+:nnoremap <silent> <leader>e :NERDTree<CR>
+
 " Give more space for displaying messages.
 set cmdheight=2
 set updatetime=300

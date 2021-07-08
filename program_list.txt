@@ -104,6 +104,7 @@ gucharmap
 bitwarden
 bitwarden-cli
 bitwarden-rofi
+qalculator-gtk
 
 # Themes/Fonts 
 arc-icon-theme
