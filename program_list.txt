@@ -64,6 +64,7 @@ nitrogen
 i3-gaps
 polybar
 i3lock
+dunst
 
 #Compositor
 picom-ibhagwan-git
@@ -114,3 +115,6 @@ noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
 noto-fonts-extra
+ttf-unifont
+nerd-fonts-anonymous-pro
+

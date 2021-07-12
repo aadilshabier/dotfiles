@@ -17,6 +17,9 @@ set relativenumber
 set nowrap
 set sidescroll=10
 
+" No seed to show mode since lightline is installed
+set noshowmode
+
 " Mouse supprt for normal mode
 set mouse=n
 
@@ -151,11 +154,6 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
-" Add (Neo)Vim's native statusline support.
-" NOTE: Please see `:h coc-status` for integrations with external plugins that
-" provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
 " Mappings for CoCList
 " Show all diagnostics.
 nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
@@ -196,6 +194,8 @@ call dein#add('neoclide/coc.nvim', { 'merged':0 })
 call dein#add('preservim/nerdtree')
 call dein#add('rust-lang/rust.vim')
 let g:rustfmt_autosave = 1
+call dein#add('ryanoasis/vim-devicons')
+call dein#add('itchyny/lightline.vim')
 
 " Required:
 call dein#end()
@@ -205,11 +205,25 @@ filetype plugin indent on
 syntax enable
 
 " If you want to install not installed plugins on startup.
-"if dein#check_install()
-"  call dein#install()
-"endif
+if dein#check_install()
+  call dein#install()
+endif
 
 "End dein Scripts-------------------------
 
 " .rasi scripts
 au BufNewFile,BufRead /*.rasi setf css
+
+
+" Lightline configuration for coc
+let g:lightline = {
+	\ 'colorscheme': 'one',
+	\ 'active': {
+	\   'left': [ [ 'mode', 'paste' ],
+	\             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
+	\ },
+	\ 'component_function': {
+	\   'cocstatus': 'coc#status'
+	\ },
+	\ }
+

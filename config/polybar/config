@@ -1,13 +1,11 @@
 [colors]
-;background = ${xrdb:color0:#222}
 background = #000000
 background-alt = ${xrdb:color0:#222}
-;foreground = ${xrdb:color7:#222}
 foreground = #ffffff
-foreground-alt = ${xrdb:color7:#222}
+foreground-alt = #90ed59
 primary = ${xrdb:color1:#222}
 secondary = ${xrdb:color2:#222}
-alert = ${xrdb:color3:#222}
+alert = #cd0000
 
 [bar/top]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -85,11 +83,6 @@ label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
-[module/updates-pacman-aurhelper]
-type = custom/script
-exec = ~/scripts/updates-pacman-aurhelper.sh
-interval = 300
-
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
@@ -133,8 +126,7 @@ format-offline = <label-offline>
 
 port = "6601"
 
-;label-song = %artist% - %title%
-;label-offline = 🎜 mpd is offline
+label-song = %artist% - %title%
 label-offline =  mpd is offline
 
 icon-prev = 
