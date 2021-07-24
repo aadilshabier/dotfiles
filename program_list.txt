@@ -8,6 +8,7 @@ sudo
 # Editor
 nano
 neovim
+emacs
 
 # Boot
 efibootmgr
@@ -62,9 +63,12 @@ nitrogen
 
 # Window Manager
 i3-gaps
-polybar
+i3status-rust
 i3lock
 dunst
+
+#Desktop Environment
+xfce4
 
 #Compositor
 picom-ibhagwan-git

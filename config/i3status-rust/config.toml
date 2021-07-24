@@ -1,0 +1,47 @@
+theme = "space-villain"
+icons = "material-nf"
+
+[[block]]
+block = "disk_space"
+path = "/"
+alias = "/"
+info_type = "used"
+format = "{icon} {used}/{total}"
+unit = "GB"
+interval = 20
+warning = 20.0
+alert = 10.0
+
+[[block]]
+block = "memory"
+display_type = "memory"
+icons = true
+format_mem = "{mem_used}"
+format_swap = "{swap_used_percents}"
+
+[[block]]
+block = "cpu"
+format = "{barchart} {utilization}"
+interval = 1
+
+[[block]]
+block = "load"
+interval = 1
+format = "{1m}"
+
+[[block]]
+block = "temperature"
+collapsed = false
+interval = 10
+format = "{average}"
+
+[[block]]
+block = "backlight"
+
+[[block]]
+block = "time"
+interval = 60
+format = "%a %d / %I:%M%p"
+
+[[block]]
+block = "battery"

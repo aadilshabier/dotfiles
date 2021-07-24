@@ -196,6 +196,8 @@ call dein#add('rust-lang/rust.vim')
 let g:rustfmt_autosave = 1
 call dein#add('ryanoasis/vim-devicons')
 call dein#add('itchyny/lightline.vim')
+call dein#add('voldikss/vim-floaterm')
+call dein#add('sudar/vim-arduino-syntax')
 
 " Required:
 call dein#end()
@@ -214,7 +216,6 @@ endif
 " .rasi scripts
 au BufNewFile,BufRead /*.rasi setf css
 
-
 " Lightline configuration for coc
 let g:lightline = {
 	\ 'colorscheme': 'one',
@@ -227,3 +228,9 @@ let g:lightline = {
 	\ },
 	\ }
 
+" Floaterm settings
+let g:floaterm_keymap_toggle = '<leader>t'
+let g:floaterm_position = 'bottom'
+let g:floaterm_width = 1.0
+let g:floaterm_height = 0.3
+"nmap <silent> <leader>t :FloatermToggle<CR>
