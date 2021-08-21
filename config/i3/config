@@ -53,6 +53,11 @@ bindsym $mod+m exec --no-startup-id sh ~/scripts/manpdf
 # Black Lock screen
 bindsym $mod+F9 exec --no-startup-id i3lock -c 000000
 
+# Open popular apps
+bindsym $mod+F1 exec --no-startup-id chromium
+bindsym $mod+F2 exec --no-startup-id thunar
+bindsym $mod+F3 exec --no-startup-id emacs
+
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -192,7 +197,7 @@ for_window [class="Qalculate-gtk"] floating enable
 
 bar {
     font pango:DejaVu Sans Mono, Anonymice Nerd Font 12
-    position top
+    position right
     status_command /usr/bin/i3status-rs .config/i3status-rust/config.toml
     colors {
         separator #666666
