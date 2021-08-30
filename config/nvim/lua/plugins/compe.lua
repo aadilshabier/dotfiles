@@ -1,4 +1,8 @@
-require'compe'.setup {
+local M = {}
+
+M.configure = function()
+
+require('compe').setup {
  	 enabled = true;
  	 autocomplete = true;
  	 debug = false;
@@ -29,3 +33,6 @@ require'compe'.setup {
  	 };
 }
 
+end -- M.configure
+
+return M

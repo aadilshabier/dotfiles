@@ -1,15 +1,16 @@
--- Rewriting init.vim in lua-- 
+-- Rewriting init.vim in lua--
 
 -- TODO: Improve starup time
 
 --- HELPERS ---
 
 local opt = vim.opt -- to opt options
-local fn = vim.fn 	-- to call vim functions  e.g fn.bufnr()
 local cmd = vim.cmd -- to execute vim commands e.g cmd('pwd')
-local g = vim.g 	-- table to access global elements
+--local fn = vim.fn 	-- to call vim functions  e.g fn.bufnr()
+--local g = vim.g 	-- table to access global elements
 
 --- OPTIONS ---
+
 
 opt.encoding = "utf-8"
 opt.backup = false
@@ -32,5 +33,5 @@ cmd[[au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=1
 
 require('plugins')
 require('mappings')
-local u = require('utils')
+--local u = require('utils')
 

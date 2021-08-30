@@ -100,7 +100,6 @@ yay
 clipit
 redshift
 flameshot
-notejot
 ripgrep
 gcolor3
 engrampa

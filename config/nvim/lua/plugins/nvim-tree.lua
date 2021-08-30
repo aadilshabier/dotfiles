@@ -1,3 +1,7 @@
+local M = {}
+
+M.configure = function ()
+
 local g = vim.g
 
 -- width of explorer 
@@ -28,6 +32,10 @@ g.nvim_tree_icons = {
 
 -- whether to follow file on buffer
 g.nvim_tree_follow = 1
-
 g.nvim_tree_highlight_opened_files = 1
+g.nvim_tree_auto_close = 1
 
+end
+
+
+return M

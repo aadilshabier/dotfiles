@@ -1,10 +1,13 @@
+local M = {}
+
+M.configure = function ()
 -- setup lspconfig and lspinstall
 local nvim_lsp = require('lspconfig')
 local nvim_lsp_install = require('lspinstall')
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
 	local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
  	local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
@@ -34,18 +37,6 @@ local on_attach = function(client, bufnr)
  	buf_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
---local servers = { 'pyright', 'rust_analyzer' }
---for _, lsp in ipairs(servers) do
---  	nvim_lsp[lsp].setup {
---    	on_attach = on_attach,
---    	flags = {
---      		debounce_text_changes = 150,
---    	}
---  	}
---end
-
 local setup_servers = function()
 	nvim_lsp_install.setup()
 	local servers = nvim_lsp_install.installed_servers()
@@ -67,3 +58,6 @@ nvim_lsp_install.post_install_hook = function ()
 	vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
 end
 
+end -- M.configure()
+
+return M

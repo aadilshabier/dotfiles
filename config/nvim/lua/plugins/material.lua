@@ -1,3 +1,7 @@
+local M = {}
+
+M.configure = function()
+
 local g = vim.g
 
 g.material_style = "deep ocean"
@@ -10,3 +14,7 @@ g.material_borders = true
 g.material_hide_eob = false
 
 require('material').set()
+
+end
+
+return M

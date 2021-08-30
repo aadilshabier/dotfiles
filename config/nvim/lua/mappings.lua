@@ -6,12 +6,14 @@ local function noremap(mode, lhs, rhs, opts)
 end
 
 local map  = vim.api.nvim_set_keymap
+local g = vim.g
+local fn = vim.fn
 
 -- MAPPINGS
 
 -- remap leader
 map("n", "<Space>", "", {})
-vim.g.mapleader = " "
+g.mapleader = " "
 
 -- remove highlight when <esc> is presses
 noremap("n", "<esc>", ":noh<cr>", { silent = true })
@@ -21,7 +23,7 @@ noremap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { silent = true })
 noremap("n", "<leader>r", "<cmd>NvimTreeRefresh<cr>", { silent = true })
 
 -- material bindings
-noremap("n", "<leader>mm", 
+noremap("n", "<leader>mm",
 	[[<cmd>lua require("material.functions").toggle_style()<cr>]], { silent = true })
 
 -- neogit
@@ -66,25 +68,25 @@ local t = function(str)
 end
 
 local check_back_space = function()
-    local col = vim.fn.col('.') - 1
-    return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
+    local col = fn.col('.') - 1
+    return col == 0 or fn.getline('.'):sub(col, col):match('%s') ~= nil
 end
 
 -- Use (s-)tab to:
 --- move to prev/next item in completion menuone
 --- jump to prev/next snippet's placeholder
 _G.tab_complete = function()
-	if vim.fn.pumvisible() == 1 then
+	if fn.pumvisible() == 1 then
 		return t "<C-n>"
 	elseif check_back_space() then
 		return t "<Tab>"
 	else
-    	return vim.fn['compe#complete']()
+    	return fn['compe#complete']()
   	end
 end
 
 _G.s_tab_complete = function()
-  	if vim.fn.pumvisible() == 1 then
+  	if fn.pumvisible() == 1 then
     	return t "<C-p>"
   	else
     	-- If <S-Tab> is not working in your terminal, change it to <C-h>

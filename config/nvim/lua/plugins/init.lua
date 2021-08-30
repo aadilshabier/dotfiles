@@ -1,49 +1,89 @@
---vim.cmd [[packadd packer.nvim]]
+-- FIXME: lualine and material plugins break splash screen
 
-packer = require("packer").startup(function(use)
-	-- Manage itself
-	use 'wbthomason/packer.nvim'
+local cmd = vim.cmd
+local fn = vim.fn
 
-	use 'neovim/nvim-lspconfig'
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+
+if fn.empty(fn.glob(install_path)) > 0 then
+  fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
+  cmd [[packadd packer.nvim]]
+end
+
+local packer = require("packer").startup(function(use)
+  -- Manage itself
+	use {
+		'wbthomason/packer.nvim',
+	}
+
+	use {
+		'neovim/nvim-lspconfig',
+		requires = {
+			'kabouzeid/nvim-lspinstall',
+		},
+		config = require('plugins/lsp').configure
+	}
 
 	use {
 		'nvim-telescope/telescope.nvim',
-		requires = { 'nvim-lua/plenary.nvim' }
+		requires = { 'nvim-lua/plenary.nvim' },
 	}
 
 	use {
     	'kyazdani42/nvim-tree.lua',
-    	requires = {'kyazdani42/nvim-web-devicons'}
+    	requires = {'kyazdani42/nvim-web-devicons'},
+		config = require('nvim-tree').configure,
+	}
+
+	-- TODO: switch to lualine
+	use {
+ 		'hoob3rt/lualine.nvim',
+		requires = {
+			'kyazdani42/nvim-web-devicons',
+			opt = true
+		},
+		config = require('plugins/statusline').configure,
 	}
 
 	use {
- 		'hoob3rt/lualine.nvim',
-		requires = {'kyazdani42/nvim-web-devicons', opt = true}
+		'fneu/breezy',
+		disable = true,
 	}
 
-	use 'fneu/breezy'
-
-	use 'tweekmonster/startuptime.vim'
+	use {
+		'tweekmonster/startuptime.vim',
+	}
 
     use {
 		'nvim-treesitter/nvim-treesitter',
-		run = ':TSUpdate'
+		run = ':TSUpdate',
+		config = require('plugins/treesitter').configure,
     }
 
-	use 'marko-cerovac/material.nvim'
+	-- FIXME: lualine and material plugins break splash screen
+	use {
+		'marko-cerovac/material.nvim',
+		config = require('plugins/material').configure
+	}
 
-	use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+	use {
+		'TimUntersberger/neogit',
+		requires = 'nvim-lua/plenary.nvim',
+		config = require('plugins/neogit').configure,
+	}
 
-	use 'hrsh7th/nvim-compe'
+	use {
+		'hrsh7th/nvim-compe',
+		config = require('plugins/compe').configure
+	}
 
-	use 'kabouzeid/nvim-lspinstall'
+	use {
+		'akinsho/bufferline.nvim',
+		requires = 'kyazdani42/nvim-web-devicons',
+		config = function () require("bufferline").setup{} end
+	}
+
 end)
 
--- plugin configs
-require('plugins/nvim-tree')
-require('plugins/statusline')
-require('plugins/treesitter')
-require('plugins/material')
-require('plugins/neogit')
-require('plugins/lsp')
-require('plugins/compe')
+
+return packer
