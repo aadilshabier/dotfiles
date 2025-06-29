@@ -1,47 +1,78 @@
+icons_format = "{icon}"
+
+[theme]
 theme = "space-villain"
+# [theme.overrides]
+# idle_bg = "#123456"
+# idle_fg = "#abcdef"
+
+[icons]
 icons = "material-nf"
 
 [[block]]
 block = "disk_space"
+if_command = "false"
 path = "/"
-alias = "/"
-info_type = "used"
-format = "{icon} {used}/{total}"
-unit = "GB"
+info_type = "available"
+alert_unit = "GB"
 interval = 20
 warning = 20.0
 alert = 10.0
+format = " $icon /: $available.eng(w:2) "
+
+[[block]]
+block = "disk_space"
+if_command = "false"
+path = "/home"
+info_type = "available"
+alert_unit = "GB"
+interval = 20
+warning = 20.0
+alert = 10.0
+format = "/home: $available.eng(w:2) "
 
 [[block]]
 block = "memory"
-display_type = "memory"
-icons = true
-format_mem = "{mem_used}"
-format_swap = "{swap_used_percents}"
+#if_command = "false"
+format = " $icon $mem_used_percents.eng(w:2), $mem_total_used_percents.eng(w:2) "
+format_alt = " $icon_swap $swap_used_percents.eng(w:2) "
 
 [[block]]
 block = "cpu"
-format = "{barchart} {utilization}"
-interval = 1
+if_command = "false"
+format = "$barchart $utilization"
 
 [[block]]
 block = "load"
-interval = 1
-format = "{1m}"
+if_command = "false"
 
 [[block]]
 block = "temperature"
-collapsed = false
-interval = 10
-format = "{average}"
+if_command = "false"
+format = " $icon $average avg "
+format_alt = " $icon $min min, $max max, $average avg "
 
 [[block]]
 block = "backlight"
 
 [[block]]
 block = "time"
-interval = 60
-format = "%a %d / %I:%M%p"
+# format = " $icon $timestamp.datetime(f:'%I:%M%p') "
+# format_alt = " $icon $timestamp.datetime(f:'%a %d / %I:%M%p') "
+interval = 5
+[block.format]
+full = " $icon $timestamp.datetime(f:'%a %d / %I:%M%p') "
+short = " $icon $timestamp.datetime(f:'%I:%M%p') "
+
+
+[[block]]
+block = "pomodoro"
+notify_cmd = "notify-send '{msg}'"
+blocking_cmd = true
+
+[[block]]
+block = "music"
+format = " $icon {$combo.str(max_w:20,rot_interval:0.3) $prev $play $next |}"
 
 [[block]]
 block = "battery"

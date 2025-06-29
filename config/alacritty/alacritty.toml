@@ -1,0 +1,8 @@
+[env]
+TERM = "alacritty"
+
+[font.normal]
+family = "monospace"
+
+[window]
+opacity = 0.7
